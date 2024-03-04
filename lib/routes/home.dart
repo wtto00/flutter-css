@@ -1,21 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter_css/widgets/my_button.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      mainAxisSize: MainAxisSize.max,
-      children: [
-        TextButton(
-            onPressed: () {
-              Navigator.pushNamed(context, "box-shadow");
-            },
-            child: const Text("box-shadow")),
-      ],
+    return Scaffold(
+      appBar: AppBar(title: const Text('Flutter CSS')),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            MyButton(
+              "box-shadow",
+              onPressed: () {
+                Navigator.pushNamed(context, "box-shadow");
+              },
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
